@@ -9,5 +9,10 @@ public class ExampleClassTest {
     public void doNothing() {
         assertEquals("Doing Nothing", ExampleClass.doNothing());
     }
+    
+    @Test
+    public void giveMeFive(){
+        assert(ExampleClass.giveMeFive() == 10);
+    }
 
 }
