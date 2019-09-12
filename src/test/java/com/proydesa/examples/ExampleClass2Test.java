@@ -17,6 +17,6 @@ public class ExampleClass2Test {
     @Test
     public void agregaContador() {
         ExampleClass2 e2 = new ExampleClass2();
-        assertEquals(20, e2.agregaContador(20));
+        assertEquals(30, e2.agregaContador(20));
     }
 }

@@ -20,8 +20,14 @@ public class Ejercicio3 {
     public static void main(String[] args) throws FileNotFoundException{
         Properties myProps = new Properties();
         try{
-            FileInputStream fis = new FileInputStream("C:\\Users\\matia\\Documents\\NetBeansProjects\\exercise3\\src\\main\\java\\resources\\usuarios.properties");
-                    //new FileInputStream(Ejercicio3.class.getResource("/exercice3/resources/usuarios.properties").getFile());
+            /*System.out.println("thread: " + Thread.currentThread().getContextClassLoader().toString());
+            ClassLoader loader = Class.forName("com.proydesa.examples.Ejercicio3").getClassLoader();
+            System.out.println("clase: " + loader.getClass().toString());
+            InputStream fis = loader.getResourceAsStream("./resources/usuarios.properties");
+            System.out.println("rrrr: " + loader.getResource("resources/usuarios.properties").getPath());
+            System.out.println("esto: " + fis.read());*/
+            //InputStream resourceAsStream = this.getClass().getClassLoader().getResourceAsStream("resources/fichero.txt");
+            FileInputStream fis = new FileInputStream(".\\resources\\application.properties");
             myProps.load(fis);
             System.out.println("Usuario 2: " + myProps.getProperty("usuario2"));
         }catch(IOException e){
