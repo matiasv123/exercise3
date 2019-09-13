@@ -8,6 +8,7 @@ package com.proydesa.DAO;
 import com.proydesa.models.Usuario;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -54,9 +55,13 @@ public class UsuarioDAOImplMemoria implements UsuarioDAO{
         return usuario;
     }
     
+    /**
+     *
+     * @return List<Usuario>
+     */
     @Override
-    public ArrayList<Usuario> buscarTodos(){
-        ArrayList<Usuario> usuarios = new ArrayList();
+    public List<Usuario> buscarTodos(){
+        List<Usuario> usuarios = new ArrayList();
         for(String i:mapaUsuario.keySet()){
             Usuario usuario = new Usuario();
             usuario.setNombre(i);

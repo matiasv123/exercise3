@@ -6,7 +6,7 @@
 package com.proydesa.DAO;
 
 import com.proydesa.models.Usuario;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -37,6 +37,6 @@ public interface UsuarioDAO {
         /* Devuelve un array de Usuarios con todos los
         *  usuarios del entorno de persistencia.
         */
-    public ArrayList<Usuario> buscarTodos();
+    public List<Usuario> buscarTodos();
     
 }

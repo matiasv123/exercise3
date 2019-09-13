@@ -3,15 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proydesa.DAO;
+package com.proydesa.models;
 
 /**
  *
  * @author Matias Villarreal
  */
-public class UsuarioDAOFactory {
+public class LogUsuario {
     
-    public UsuarioDAO crearUsuarioDAO(){
-        return new UsuarioDAOImplMemoria();
-    }
+    
 }
