@@ -7,9 +7,9 @@ package com.proydesa.models;
 
 /**
  *
- * @author Matias Villarreal
+ * @author matia
  */
-public class LogUsuario {
+public class Perro extends Mascota{
     
     
 }
