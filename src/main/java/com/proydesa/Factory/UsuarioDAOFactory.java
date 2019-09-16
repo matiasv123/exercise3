@@ -14,7 +14,7 @@ import com.proydesa.DAO.UsuarioDAOHashMap;
  */
 public class UsuarioDAOFactory {
     
-    public UsuarioDAO crearUsuarioDAO(){
+    public static UsuarioDAO crearUsuarioDAO(){
         return new UsuarioDAOHashMap();
     }
 }

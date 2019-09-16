@@ -14,7 +14,7 @@ import com.proydesa.DAO.MascotaDAOArrayList;
  */
 public class MascotaDAOFactory {
     
-    public MascotaDAO crearMascotaDAO(){
+    public static MascotaDAO crearMascotaDAO(){
         return new MascotaDAOArrayList();
     }
     

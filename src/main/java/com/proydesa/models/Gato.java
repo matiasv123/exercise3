@@ -46,5 +46,4 @@ public class Gato extends Mascota{
         this.raza = raza;
     }
     
-    
 }

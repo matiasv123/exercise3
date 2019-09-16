@@ -60,7 +60,7 @@ public class MascotaDAOArrayList implements MascotaDAO{
             Mascota tempMascota = iterator.next();
             if(tempMascota.getNombre().equals(nombre) && tempMascota.getTipo().equals(tipo)){
                encontrado = true;
-               mascota = new MascotaFactory().crearMascota(tempMascota);
+               mascota = MascotaFactory.crearMascota(tempMascota);
             }
         }
         return mascota;

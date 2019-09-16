@@ -32,7 +32,6 @@ public class Ejercicio3 {
             myProps.load(fis);
             System.out.println("Usuario 2: " + myProps.getProperty("usuario2"));
             Gato cat = new Gato();
-            cat.
         }catch(IOException e){
             System.out.println("Error: " + e.getMessage());
         }

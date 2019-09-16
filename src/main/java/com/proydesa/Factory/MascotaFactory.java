@@ -15,7 +15,7 @@ import com.proydesa.models.Perro;
  */
 public class MascotaFactory {
     
-    public Mascota crearMascota(Mascota mascota){
+    public static Mascota crearMascota(Mascota mascota){
         if(mascota instanceof Perro){
             return new Perro();
         }else if(mascota instanceof Gato){
