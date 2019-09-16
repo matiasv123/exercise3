@@ -6,6 +6,7 @@
 package com.proydesa.DAO;
 
 import com.proydesa.Enumeraciones.TipoMascota;
+import com.proydesa.Factory.MascotaFactory;
 import com.proydesa.models.Mascota;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -53,20 +54,21 @@ public class MascotaDAOArrayList implements MascotaDAO{
     @Override
     public Mascota buscarPorNombreTipo(String nombre, TipoMascota tipo){
         boolean encontrado  = false;
-        Mascota tempMascota = null;
+        Mascota mascota = null;
         Iterator<Mascota> iterator= arrayMascotas.iterator();
         while(iterator.hasNext()&& !encontrado){
-            tempMascota = iterator.next();
+            Mascota tempMascota = iterator.next();
             if(tempMascota.getNombre().equals(nombre) && tempMascota.getTipo().equals(tipo)){
                encontrado = true;
+               mascota = new MascotaFactory().crearMascota(tempMascota);
             }
         }
-        return encontrado?tempMascota:null;
+        return mascota;
     }
     
     @Override
     public List<Mascota> buscarPorNombre(String nombre){
-        List<Mascota> tempLista = null;
+        List<Mascota> tempLista = new ArrayList();
         Iterator<Mascota> iterator= arrayMascotas.iterator();
         while(iterator.hasNext()){
             Mascota tempMascota = iterator.next();
@@ -79,7 +81,7 @@ public class MascotaDAOArrayList implements MascotaDAO{
     
     @Override
     public List<Mascota> buscarTodas(){
-        List<Mascota> tempLista = null;
+        List<Mascota> tempLista = new ArrayList();
         Iterator<Mascota> iterator= arrayMascotas.iterator();
         while(iterator.hasNext()){
             tempLista.add(iterator.next());

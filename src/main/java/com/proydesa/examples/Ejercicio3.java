@@ -5,6 +5,7 @@
  */
 package com.proydesa.examples;
 
+import com.proydesa.models.Gato;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -30,6 +31,8 @@ public class Ejercicio3 {
             FileInputStream fis = new FileInputStream(".\\resources\\application.properties");
             myProps.load(fis);
             System.out.println("Usuario 2: " + myProps.getProperty("usuario2"));
+            Gato cat = new Gato();
+            cat.
         }catch(IOException e){
             System.out.println("Error: " + e.getMessage());
         }

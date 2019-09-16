@@ -16,7 +16,7 @@ abstract public class Mascota {
     private Estado  estado;
     private TipoMascota tipo;
     private String nombre;
-    private int energia;
+    private int energia;        
 
     
     abstract public void comer();
@@ -48,11 +48,11 @@ abstract public class Mascota {
         this.nombre = nombre;
     }
     
-    public void aumentarEnergia(int aumento){
+    protected void aumentarEnergia(int aumento){
         energia += aumento;
     }
     
-    public void disminuirEnergia(int disminucion){
+    protected void disminuirEnergia(int disminucion){
         energia -= disminucion;
     }
     
