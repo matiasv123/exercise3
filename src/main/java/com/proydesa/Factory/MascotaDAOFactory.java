@@ -5,16 +5,17 @@
  */
 package com.proydesa.Factory;
 
-import com.proydesa.DAO.UsuarioDAO;
-import com.proydesa.DAO.UsuarioDAOHashMap;
+import com.proydesa.DAO.MascotaDAO;
+import com.proydesa.DAO.MascotaDAOArrayList;
 
 /**
  *
  * @author Matias Villarreal
  */
-public class UsuarioDAOFactory {
+public class MascotaDAOFactory {
     
-    public UsuarioDAO crearUsuarioDAO(){
-        return new UsuarioDAOHashMap();
+    public MascotaDAO crearMascotaDAO(){
+        return new MascotaDAOArrayList();
     }
+    
 }

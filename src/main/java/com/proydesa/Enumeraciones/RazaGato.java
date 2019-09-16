@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proydesa.models;
+package com.proydesa.Enumeraciones;
 
 /**
  *
  * @author Matias Villarreal
  */
-abstract public class Persona {
-    private String nombre;
-    private String apellido;
-    private int    dni;
-    private int    edad;
+public enum RazaGato {
+    SIAMES,
+    PERSA,
+    EUROPEO;
     
 }

@@ -5,11 +5,15 @@
  */
 package com.proydesa.models;
 
+import com.proydesa.Enumeraciones.Estado;
+import com.proydesa.Enumeraciones.TipoMascota;
+
 /**
  *
  * @author Matias Villarreal
  */
 abstract public class Mascota {
+    private Estado  estado;
     private TipoMascota tipo;
     private String nombre;
     private int energia;
@@ -17,7 +21,16 @@ abstract public class Mascota {
     
     abstract public void comer();
     abstract public void dormir();
+    abstract public void despertar();
+
     
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
     
     public TipoMascota getTipo() {
         return tipo;
@@ -35,5 +48,15 @@ abstract public class Mascota {
         this.nombre = nombre;
     }
     
+    public void aumentarEnergia(int aumento){
+        energia += aumento;
+    }
     
+    public void disminuirEnergia(int disminucion){
+        energia -= disminucion;
+    }
+    
+    public int getEnergia(){
+        return energia;
+    }
 }

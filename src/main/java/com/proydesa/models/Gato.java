@@ -7,19 +7,15 @@ package com.proydesa.models;
 
 import static com.proydesa.Enumeraciones.Estado.DESPIERTO;
 import static com.proydesa.Enumeraciones.Estado.DORMIDO;
-import com.proydesa.Enumeraciones.RazaPerro;
+import com.proydesa.Enumeraciones.RazaGato;
 
 /**
  *
  * @author Matias Villarreal
  */
-public class Perro extends Mascota{
-    private final int AUMENTO_ENERGIA = 20;
-    private RazaPerro raza;
-
-    public Perro() {
-        
-    }
+public class Gato extends Mascota{
+    private final int AUMENTO_ENERGIA = 10;
+    private RazaGato raza;
     
     
     @Override
@@ -38,15 +34,15 @@ public class Perro extends Mascota{
         super.setEstado(DESPIERTO);
     }
     
-    public void caminar(){
-        super.disminuirEnergia(AUMENTO_ENERGIA/3);
+    public void saltar(){
+        super.disminuirEnergia(AUMENTO_ENERGIA/2);
     }
 
-    public RazaPerro getRaza() {
+    public RazaGato getRaza() {
         return raza;
     }
 
-    public void setRaza(RazaPerro raza) {
+    public void setRaza(RazaGato raza) {
         this.raza = raza;
     }
     

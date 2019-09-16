@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proydesa.Factory;
-
-import com.proydesa.DAO.UsuarioDAO;
-import com.proydesa.DAO.UsuarioDAOHashMap;
+package com.proydesa.Enumeraciones;
 
 /**
  *
  * @author Matias Villarreal
  */
-public class UsuarioDAOFactory {
+public enum Estado {
+    DESPIERTO,
+    DORMIDO;
     
-    public UsuarioDAO crearUsuarioDAO(){
-        return new UsuarioDAOHashMap();
-    }
 }

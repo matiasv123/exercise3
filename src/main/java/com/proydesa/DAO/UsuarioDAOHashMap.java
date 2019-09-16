@@ -14,10 +14,10 @@ import java.util.List;
  *
  * @author Matias Villarreal
  */
-public class UsuarioDAOImplMemoria implements UsuarioDAO{
+public class UsuarioDAOHashMap implements UsuarioDAO{
     private HashMap<String, String> mapaUsuario;
 
-    public UsuarioDAOImplMemoria() {
+    public UsuarioDAOHashMap() {
         mapaUsuario = new HashMap<>();
     }
     
