@@ -12,7 +12,7 @@ import com.proydesa.Enumeraciones.TipoMascota;
  *
  * @author Matias Villarreal
  */
-abstract public class Mascota {
+abstract public class Mascota implements Comparable<Mascota>{
     private Estado  estado;
     private TipoMascota tipo;
     private String nombre;
@@ -24,6 +24,19 @@ abstract public class Mascota {
     abstract public void despertar();
 
     
+      //La clase se ordena por el nombre.
+    @Override
+    public int compareTo(Mascota mascota){
+        return this.nombre.compareTo(mascota.nombre);
+    }
+    
+      //Obligo a definir en la clases hijas estos metodos asi puedo usar el atributo Raza.
+    @Override
+    abstract public int hashCode();
+    @Override
+    abstract public boolean equals(Object o);
+            
+            
     public Estado getEstado() {
         return estado;
     }

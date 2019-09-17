@@ -8,6 +8,7 @@ package com.proydesa.models;
 import static com.proydesa.Enumeraciones.Estado.DESPIERTO;
 import static com.proydesa.Enumeraciones.Estado.DORMIDO;
 import com.proydesa.Enumeraciones.RazaPerro;
+import java.util.Objects;
 
 /**
  *
@@ -21,6 +22,25 @@ public class Perro extends Mascota{
         
     }
     
+    
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null) return false;
+        if(this.getClass() != obj.getClass()) return false;
+        final Perro otroPerro = (Perro) obj;
+        return  (this.raza.equals(otroPerro.raza)            &&
+                 super.getTipo().equals(otroPerro.getTipo()) &&
+                 super.getNombre().equals(otroPerro.getNombre()));
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 53 * hash + Objects.hashCode(this.raza);
+        hash = 53 * hash + Objects.hashCode(super.getTipo());
+        hash = 53 * hash + Objects.hashCode(super.getNombre());
+        return hash;
+    }
     
     @Override
     public void comer(){
