@@ -7,6 +7,9 @@ package com.proydesa.vistas;
 
 import com.proydesa.controllers.ControlUsuarios;
 import com.proydesa.controllers.Controlador;
+import static com.proydesa.Enumeraciones.AccionesVista.*;
+import java.awt.event.ActionEvent;
+import java.util.Scanner;
 
 /**
  *
@@ -29,9 +32,55 @@ public class VistaLogueo implements InterfazVista{
     
     @Override
     public void arranca(){
+        Scanner reader = new Scanner(System.in);
+        validado = false;
+        boolean  terminado = false;
+        do{
+            System.out.println("************* Logueo Usuario *************");
+            System.out.println("              (Salir..: 'q')              ");
+            System.out.print("   ->Ingrese nombre  usuario: ");
+            nombreUsuario = reader.nextLine();
+            if(nombreUsuario.equalsIgnoreCase("q")){
+                terminado = true;
+            }else{
+                System.out.print("   ->Ingrese pasword usuario: ");
+                passwordUsuario = reader.nextLine();
+                if(passwordUsuario.equalsIgnoreCase("q")){
+                    terminado = true;
+                }else{
+                    System.out.println("");
+                    if(controlDatos()){
+                         //Todo bien, salgo del menu de logueo.
+                        terminado = true;
+                    }else{
+                         //Si hubo algun error, hago una pausa para que el usuario lo vea.
+                        reader.nextLine();
+                    }
+                }
+            }
+            System.out.println("\n");
+        }while(!terminado);
         
     }
 
+    public boolean controlDatos(){
+        if(nombreUsuario.equals("") || passwordUsuario.equals("")){
+            System.out.print("ERROR: datos incompletos- Revise.");
+            return false;
+        }
+        controlador.actionPerformed(new ActionEvent(this,1,BUSCARUNO.toString()));
+        if(nombreUsuario.equals("")){
+            System.out.print("ERROR: usuario inexistente- Revise.");
+            return false;    
+        }
+        controlador.actionPerformed(new ActionEvent(this,1,VALIDAR.toString()));
+        if(!validado){
+            System.out.print("ERROR: password incorrecta- Revise.");
+            return false;
+        }
+        return true;
+    }
+    
     public String getNombreUsuario() {
         return nombreUsuario;
     }
